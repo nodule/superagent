@@ -7,7 +7,7 @@
     "url": "https://github.com/nodule/superagent.git"
   },
   "dependencies": {
-    "superagent": "0.x.x"
+    "superagent": "0.18.x"
   },
   "nodes": [
     {
@@ -79,7 +79,7 @@
         }
       },
       "require": {
-        "superagent": "0.x.x"
+        "superagent": "0.18.x"
       },
       "phrases": {
         "active": "Creating superagent"
