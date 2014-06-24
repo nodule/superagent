@@ -77,7 +77,7 @@
         "superagent": "0.18.x"
       },
       "phrases": {
-        "active": "Creating superagent"
+        "active": "Creating superagent {{input.method}}: {{input.url}}"
       },
       "description": "Super Agent is light-weight progressive ajax API",
       "ns": "superagent",

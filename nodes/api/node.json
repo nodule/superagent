@@ -3,7 +3,7 @@
   "ns":"superagent",
   "description":"Super Agent is light-weight progressive ajax API",
   "phrases": {
-    "active": "Creating superagent"
+    "active": "Creating superagent {{input.method}}: {{input.url}}"
   },
   "require": {
     "superagent": "0.18.x"
