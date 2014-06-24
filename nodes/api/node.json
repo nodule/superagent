@@ -21,11 +21,6 @@
         "type":"string",
         "format":"url"
       },
-      "redirects":{
-        "title":"Redirects",
-        "type":"number",
-        "default": 5
-      },
       "withCredentials":{
         "title":"With Credentials",
         "description": "enables the ability to send cookies from the origin, however only when \"Access-Control-Allow-Origin\" is not a wildcard (\"*\"), and \"Access-Control-Allow-Credentials\" is \"true\"",

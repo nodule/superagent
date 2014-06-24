@@ -59,11 +59,6 @@
             "type": "string",
             "format": "url"
           },
-          "redirects": {
-            "title": "Redirects",
-            "type": "number",
-            "default": 5
-          },
           "withCredentials": {
             "title": "With Credentials",
             "description": "enables the ability to send cookies from the origin, however only when \"Access-Control-Allow-Origin\" is not a wildcard (\"*\"), and \"Access-Control-Allow-Credentials\" is \"true\"",
@@ -87,7 +82,7 @@
       "description": "Super Agent is light-weight progressive ajax API",
       "ns": "superagent",
       "name": "api",
-      "fn": "output.request = superagent(input.method, input.url);\noutput.request.redirects(input.redirects);\nif(input.withCredentials) {\n  output.request.withCredentials();\n}\n"
+      "fn": "output.request = superagent(input.method, input.url);\nif(input.withCredentials) {\n  output.request.withCredentials();\n}\n"
     },
     {
       "ports": {
