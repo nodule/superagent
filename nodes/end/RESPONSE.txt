@@ -1,0 +1,19 @@
+I think the only correct way is to have only one res port.
+
+And then fully describe the res object.
+
+However the user interface should reflect this.
+
+Within .fbp it's already possible to just do, e.g:
+
+ END res [status] ->
+
+Within the UI if a port is more thoroughly described it should
+be visible. This eliminates the problem of have 30+ ports.
+You then just connect to a few properties of the output on a port.
+
+Besides that you'll have a full schema belonging to the output,
+which can then also be used to do extra checks, for example
+on the receiving part. (Does this property type match the receivers type)
+
+Anyway, this is not yet how this nodule is written.

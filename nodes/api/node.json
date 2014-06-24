@@ -1,0 +1,43 @@
+{
+  "name":"api",
+  "ns":"superagent",
+  "description":"Super Agent is light-weight progressive ajax API",
+  "phrases": {
+    "active": "Creating superagent"
+  },
+  "require": {
+    "superagent": "0.x.x"
+  },
+  "ports":{
+    "input":{
+      "method":{
+        "title":"Method",
+        "type":"string",
+        "enum":["GET","POST","PUT","HEAD","DELETE"],
+        "default": "GET"
+      },
+      "url":{
+        "title":"URL",
+        "type":"string",
+        "format":"url"
+      },
+      "redirects":{
+        "title":"Redirects",
+        "type":"number",
+        "default": 5
+      },
+      "withCredentials":{
+        "title":"With Credentials",
+        "description": "enables the ability to send cookies from the origin, however only when \"Access-Control-Allow-Origin\" is not a wildcard (\"*\"), and \"Access-Control-Allow-Credentials\" is \"true\"",
+        "type":"boolean",
+        "default": false
+      }
+    },
+    "output": {
+      "request": {
+        "type": "Request",
+        "title":"Request"
+      }
+    }
+  }
+}

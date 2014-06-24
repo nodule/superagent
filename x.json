@@ -1,0 +1,251 @@
+{
+  "name": "superagent",
+  "description": "Superagent for Chiχ",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/superagent.git"
+  },
+  "dependencies": {
+    "superagent": "^0.18.0"
+  },
+  "nodes": [
+    {
+      "ports": {
+        "input": {
+          "request": {
+            "title": "Request",
+            "type": "Request"
+          },
+          "type": {
+            "title": "Type",
+            "type": "string",
+            "async": true
+          }
+        },
+        "output": {
+          "request": {
+            "type": "Request",
+            "title": "Request"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Accepting type `{{input.type}}`"
+      },
+      "description": "Accept types",
+      "async": true,
+      "ns": "superagent",
+      "name": "accept",
+      "fn": "on.input.type = function() {\n  output( { request: input.request.accept(data) });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "method": {
+            "title": "Method",
+            "type": "string",
+            "enum": [
+              "GET",
+              "POST",
+              "PUT",
+              "HEAD",
+              "DELETE"
+            ],
+            "default": "GET"
+          },
+          "url": {
+            "title": "URL",
+            "type": "string",
+            "format": "url"
+          },
+          "redirects": {
+            "title": "Redirects",
+            "type": "number",
+            "default": 5
+          },
+          "withCredentials": {
+            "title": "With Credentials",
+            "description": "enables the ability to send cookies from the origin, however only when \"Access-Control-Allow-Origin\" is not a wildcard (\"*\"), and \"Access-Control-Allow-Credentials\" is \"true\"",
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "output": {
+          "request": {
+            "type": "Request",
+            "title": "Request"
+          }
+        }
+      },
+      "require": {
+        "superagent": "0.x.x"
+      },
+      "phrases": {
+        "active": "Creating superagent"
+      },
+      "description": "Super Agent is light-weight progressive ajax API",
+      "ns": "superagent",
+      "name": "api",
+      "fn": "output.request = new superagent.Request(input.method, input.url);\noutput.request.redirects(input.redirects);\nif(input.withCredentials) {\n  output.request.withCredentials();\n}\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "request": {
+            "title": "Request",
+            "type": "Request"
+          }
+        },
+        "output": {
+          "error": {
+            "type": "Error",
+            "title": "Error"
+          },
+          "res": {
+            "type": "Response",
+            "title": "Response"
+          },
+          "body": {
+            "type": "string",
+            "title": "Body"
+          },
+          "headers": {
+            "type": "string",
+            "title": "Headers"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Sending"
+      },
+      "description": "Send",
+      "ns": "superagent",
+      "name": "end",
+      "fn": "output = function() {\n\n  input.request.end(function(err, res) {\n\n    if(err) {\n\n      cb({ error: err });\n\n    } else {\n      cb({\n        res: res,\n        body: res.body,\n        headers: res.headers,\n        status: res.status\n      });\n    }\n\n  });\n\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "request": {
+            "title": "Request",
+            "type": "Request"
+          },
+          "query": {
+            "title": "Query",
+            "type": "object",
+            "async": true
+          }
+        },
+        "output": {
+          "request": {
+            "type": "Request",
+            "title": "Request"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Adding query string"
+      },
+      "description": "The .query() method accepts objects, which when used with the GET method will form a query-string. The following will produce the path /search?query=Manny&range=1..5&order=desc.",
+      "async": true,
+      "ns": "superagent",
+      "name": "query",
+      "fn": "on.input.query = function() {\n  output({ request: input.request.query(data) } );\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "request": {
+            "title": "Request",
+            "type": "Request"
+          },
+          "in": {
+            "title": "Data",
+            "type": "object",
+            "async": true
+          }
+        },
+        "output": {
+          "request": {
+            "type": "Request",
+            "title": "Request"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Sending"
+      },
+      "description": "Send",
+      "async": true,
+      "ns": "superagent",
+      "name": "send",
+      "fn": "on.input.in = function() {\n  output( { request: input.request.send(data) });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "request": {
+            "title": "Request",
+            "type": "Request"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "output": {
+          "request": {
+            "type": "Request",
+            "title": "Request"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Setting header field `{{input.name}}`"
+      },
+      "description": "Set Header",
+      "ns": "superagent",
+      "name": "set",
+      "fn": "output.request = input.request.set(input.name, input.value);\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "request": {
+            "title": "Request",
+            "type": "Request"
+          },
+          "type": {
+            "title": "Type",
+            "type": "string",
+            "async": true
+          }
+        },
+        "output": {
+          "request": {
+            "type": "Request",
+            "title": "Request"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Content type `{{input.type}}`"
+      },
+      "description": "Content type",
+      "async": true,
+      "ns": "superagent",
+      "name": "type",
+      "fn": "on.input.type = function() {\n  output( { request: input.request.type(data) });\n};\n"
+    }
+  ],
+  "twigs": []
+}

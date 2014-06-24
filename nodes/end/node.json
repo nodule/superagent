@@ -1,0 +1,38 @@
+{
+  "name":"end",
+  "ns":"superagent",
+  "description":"Send",
+  "phrases": {
+    "active": "Sending"
+  },
+  "ports":{
+    "input":{
+      "request":{
+        "title":"Request",
+        "type":"Request"
+      }
+    },
+    "output": {
+      "error": {
+        "type": "Error",
+        "title":"Error"
+      },
+      "res": {
+        "type": "Response",
+        "title":"Response"
+      },
+      "body": {
+        "type": "string",
+        "title":"Body"
+      },
+      "headers": {
+        "type": "string",
+        "title":"Headers"
+      },
+      "status": {
+        "type": "string",
+        "title":"Status"
+      }
+    }
+  }
+}

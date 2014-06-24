@@ -1,0 +1,28 @@
+{
+  "name":"send",
+  "ns":"superagent",
+  "async": true,
+  "description":"Send",
+  "phrases": {
+    "active": "Sending"
+  },
+  "ports":{
+    "input":{
+      "request":{
+        "title":"Request",
+        "type":"Request"
+      },
+      "in":{
+        "title":"Data",
+        "type":"object",
+        "async": true
+      }
+    },
+    "output": {
+      "request": {
+        "type": "Request",
+        "title":"Request"
+      }
+    }
+  }
+}
