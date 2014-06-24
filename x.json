@@ -90,6 +90,38 @@
           "request": {
             "title": "Request",
             "type": "Request"
+          },
+          "user": {
+            "title": "User",
+            "type": "string"
+          },
+          "pass": {
+            "title": "Password",
+            "type": "string",
+            "format": "password"
+          }
+        },
+        "output": {
+          "request": {
+            "type": "Request",
+            "title": "Request"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Setting Authorization field"
+      },
+      "description": "Set Authorization field value with `user` and `pass`",
+      "ns": "superagent",
+      "name": "auth",
+      "fn": "output.request = input.request.auth(input.user, input.pass);\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "request": {
+            "title": "Request",
+            "type": "Request"
           }
         },
         "output": {
