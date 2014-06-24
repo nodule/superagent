@@ -1,9 +1,9 @@
 {
   "name":"end",
   "ns":"superagent",
-  "description":"Send",
+  "description":"End request",
   "phrases": {
-    "active": "Sending"
+    "active": "Starting request"
   },
   "ports":{
     "input":{
