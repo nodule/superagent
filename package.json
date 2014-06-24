@@ -1,0 +1,28 @@
+{
+  "name": "nodule-superagent",
+  "description": "Superagent for Chiχ",
+  "author": "Rob Halff <rob.halff@gmail.com>",
+  "version": "0.0.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/superagent.git"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "dependencies": {
+    "superagent": "^0.18.0"
+  },
+  "devDependencies": {
+    "chit": "0.x.x"
+  },
+  "main": "x",
+  "scripts": {
+    "test": "chit"
+  },
+  "chix": {
+    "name": "superagent",
+    "color": "rgb(71,162,170)"
+  }
+}
