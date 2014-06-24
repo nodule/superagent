@@ -87,7 +87,7 @@
       "description": "Super Agent is light-weight progressive ajax API",
       "ns": "superagent",
       "name": "api",
-      "fn": "output.request = new superagent.Request(input.method, input.url);\noutput.request.redirects(input.redirects);\nif(input.withCredentials) {\n  output.request.withCredentials();\n}\n"
+      "fn": "output.request = superagent(input.method, input.url);\noutput.request.redirects(input.redirects);\nif(input.withCredentials) {\n  output.request.withCredentials();\n}\n"
     },
     {
       "ports": {
