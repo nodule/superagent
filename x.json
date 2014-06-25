@@ -153,7 +153,7 @@
       "description": "End request",
       "ns": "superagent",
       "name": "end",
-      "fn": "output = function() {\n\n  input.request.end(function(err, res) {\n\n    if(err) {\n\n      cb({ error: err });\n\n    } else {\n      cb({\n        res: res,\n        body: res.body,\n        headers: res.headers,\n        status: res.status\n      });\n    }\n\n  });\n\n};\n"
+      "fn": "output = function() {\n\n  input.request.end(function(err, res) {\n\n    if(err) {\n\n      cb({ error: err });\n\n    } else {\n      cb({\n        res: res,\n        body: res.body,\n        headers: res.headers,\n        status: res.status\n      });\n    }\n\n    done();\n\n  });\n\n};\n"
     },
     {
       "ports": {

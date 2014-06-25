@@ -15,6 +15,8 @@ output = function() {
       });
     }
 
+    done();
+
   });
 
 };
