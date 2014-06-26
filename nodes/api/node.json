@@ -6,7 +6,7 @@
     "active": "Creating superagent {{input.method}}: {{input.url}}"
   },
   "require": {
-    "superagent": "0.18.x"
+    "superagent": "^0.18.0"
   },
   "ports":{
     "input":{

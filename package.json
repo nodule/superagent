@@ -12,7 +12,7 @@
     "node": ">=0.6.0"
   },
   "dependencies": {
-    "superagent": "0.18.x"
+    "superagent": "^0.18.0"
   },
   "devDependencies": {
     "chit": "0.x.x"
