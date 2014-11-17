@@ -1,27 +1,27 @@
 {
-  "name":"accept",
-  "ns":"superagent",
+  "name": "accept",
+  "ns": "superagent",
   "async": true,
-  "description":"Accept types",
+  "description": "Accept types",
   "phrases": {
     "active": "Accepting type `{{input.type}}`"
   },
-  "ports":{
-    "input":{
-      "request":{
-        "title":"Request",
-        "type":"Request"
+  "ports": {
+    "input": {
+      "request": {
+        "title": "Request",
+        "type": "Request"
       },
-      "type":{
-        "title":"Type",
-        "type":"string",
+      "type": {
+        "title": "Type",
+        "type": "string",
         "async": true
       }
     },
     "output": {
       "request": {
         "type": "Request",
-        "title":"Request"
+        "title": "Request"
       }
     }
   }

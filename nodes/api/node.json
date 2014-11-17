@@ -1,38 +1,46 @@
 {
-  "name":"api",
-  "ns":"superagent",
-  "description":"Super Agent is light-weight progressive ajax API",
+  "name": "api",
+  "ns": "superagent",
+  "description": "Super Agent is light-weight progressive ajax API",
   "phrases": {
     "active": "Creating superagent {{input.method}}: {{input.url}}"
   },
-  "require": {
-    "superagent": "^0.18.0"
-  },
-  "ports":{
-    "input":{
-      "method":{
-        "title":"Method",
-        "type":"string",
-        "enum":["GET","POST","PUT","HEAD","DELETE"],
+  "ports": {
+    "input": {
+      "method": {
+        "title": "Method",
+        "type": "string",
+        "enum": [
+          "GET",
+          "POST",
+          "PUT",
+          "HEAD",
+          "DELETE"
+        ],
         "default": "GET"
       },
-      "url":{
-        "title":"URL",
-        "type":"string",
-        "format":"url"
+      "url": {
+        "title": "URL",
+        "type": "string",
+        "format": "url"
       },
-      "withCredentials":{
-        "title":"With Credentials",
+      "withCredentials": {
+        "title": "With Credentials",
         "description": "enables the ability to send cookies from the origin, however only when \"Access-Control-Allow-Origin\" is not a wildcard (\"*\"), and \"Access-Control-Allow-Credentials\" is \"true\"",
-        "type":"boolean",
+        "type": "boolean",
         "default": false
       }
     },
     "output": {
       "request": {
         "type": "Request",
-        "title":"Request"
+        "title": "Request"
       }
+    }
+  },
+  "dependencies": {
+    "npm": {
+      "superagent": "^0.18.0"
     }
   }
 }

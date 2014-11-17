@@ -1,37 +1,37 @@
 {
-  "name":"end",
-  "ns":"superagent",
-  "description":"End request",
+  "name": "end",
+  "ns": "superagent",
+  "description": "End request",
   "phrases": {
     "active": "Starting request"
   },
-  "ports":{
-    "input":{
-      "request":{
-        "title":"Request",
-        "type":"Request"
+  "ports": {
+    "input": {
+      "request": {
+        "title": "Request",
+        "type": "Request"
       }
     },
     "output": {
       "error": {
         "type": "Error",
-        "title":"Error"
+        "title": "Error"
       },
       "res": {
         "type": "Response",
-        "title":"Response"
+        "title": "Response"
       },
       "body": {
         "type": "string",
-        "title":"Body"
+        "title": "Body"
       },
       "headers": {
         "type": "string",
-        "title":"Headers"
+        "title": "Headers"
       },
       "status": {
         "type": "string",
-        "title":"Status"
+        "title": "Status"
       }
     }
   }

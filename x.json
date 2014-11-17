@@ -40,6 +40,11 @@
       "fn": "on.input.type = function() {\n  output( { request: input.request.accept(data) });\n};\n"
     },
     {
+      "dependencies": {
+        "npm": {
+          "superagent": "^0.18.0"
+        }
+      },
       "ports": {
         "input": {
           "method": {
@@ -72,9 +77,6 @@
             "title": "Request"
           }
         }
-      },
-      "require": {
-        "superagent": "^0.18.0"
       },
       "phrases": {
         "active": "Creating superagent {{input.method}}: {{input.url}}"

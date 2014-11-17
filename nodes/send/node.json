@@ -1,27 +1,27 @@
 {
-  "name":"send",
-  "ns":"superagent",
+  "name": "send",
+  "ns": "superagent",
   "async": true,
-  "description":"Send",
+  "description": "Send",
   "phrases": {
     "active": "Sending"
   },
-  "ports":{
-    "input":{
-      "request":{
-        "title":"Request",
-        "type":"Request"
+  "ports": {
+    "input": {
+      "request": {
+        "title": "Request",
+        "type": "Request"
       },
-      "in":{
-        "title":"Data",
-        "type":"object",
+      "in": {
+        "title": "Data",
+        "type": "object",
         "async": true
       }
     },
     "output": {
       "request": {
         "type": "Request",
-        "title":"Request"
+        "title": "Request"
       }
     }
   }

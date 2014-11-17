@@ -1,30 +1,30 @@
 {
-  "name":"auth",
-  "ns":"superagent",
-  "description":"Set Authorization field value with `user` and `pass`",
+  "name": "auth",
+  "ns": "superagent",
+  "description": "Set Authorization field value with `user` and `pass`",
   "phrases": {
     "active": "Setting Authorization field"
   },
-  "ports":{
-    "input":{
-      "request":{
-        "title":"Request",
-        "type":"Request"
+  "ports": {
+    "input": {
+      "request": {
+        "title": "Request",
+        "type": "Request"
       },
-      "user":{
-        "title":"User",
-        "type":"string"
+      "user": {
+        "title": "User",
+        "type": "string"
       },
-      "pass":{
-        "title":"Password",
-        "type":"string",
-        "format":"password"
+      "pass": {
+        "title": "Password",
+        "type": "string",
+        "format": "password"
       }
     },
     "output": {
       "request": {
         "type": "Request",
-        "title":"Request"
+        "title": "Request"
       }
     }
   }

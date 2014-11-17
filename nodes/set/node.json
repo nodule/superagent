@@ -1,29 +1,29 @@
 {
-  "name":"set",
-  "ns":"superagent",
-  "description":"Set Header",
+  "name": "set",
+  "ns": "superagent",
+  "description": "Set Header",
   "phrases": {
     "active": "Setting header field `{{input.name}}`"
   },
-  "ports":{
-    "input":{
-      "request":{
-        "title":"Request",
-        "type":"Request"
+  "ports": {
+    "input": {
+      "request": {
+        "title": "Request",
+        "type": "Request"
       },
-      "name":{
-        "title":"Name",
-        "type":"string"
+      "name": {
+        "title": "Name",
+        "type": "string"
       },
-      "value":{
-        "title":"Value",
-        "type":"string"
+      "value": {
+        "title": "Value",
+        "type": "string"
       }
     },
     "output": {
       "request": {
         "type": "Request",
-        "title":"Request"
+        "title": "Request"
       }
     }
   }
