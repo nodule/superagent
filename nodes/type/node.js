@@ -1,3 +1,3 @@
 on.input.type = function() {
-  output( { request: input.request.type(data) });
+  output( { request: input.request.type(input.type) });
 };

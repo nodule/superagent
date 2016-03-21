@@ -1,3 +1,3 @@
 on.input.query = function() {
-  output({ request: input.request.query(data) } );
+  output({ request: input.request.query(input.query) } );
 };
