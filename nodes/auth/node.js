@@ -1,1 +1,1 @@
-output.request = $.request.auth($.user, $.pass);
+output.request = $.write('request', $.request.auth($.user, $.pass));

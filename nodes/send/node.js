@@ -1,3 +1,3 @@
 on.input.in = function() {
-  output( { request: $.request.send($.in) });
+  output( { request: $.write('request', $.request.send($.in)) });
 };

@@ -1,3 +1,3 @@
 on.input.query = function() {
-  output({ request: $.request.query($.query) } );
+  output({ request: $.write('request', $.request.query($.query)) } );
 };

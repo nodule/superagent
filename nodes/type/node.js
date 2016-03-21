@@ -1,3 +1,3 @@
 on.input.type = function() {
-  output( { request: $.request.type($.type) });
+  output( { request: $.write('request', $.request.type($.type)) });
 };
