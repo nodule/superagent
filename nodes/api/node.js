@@ -1,4 +1,4 @@
-output.request = superagent(input.method, input.url);
-if(input.withCredentials) {
+output.request = superagent($.method, $.url);
+if($.withCredentials) {
   output.request.withCredentials();
 }

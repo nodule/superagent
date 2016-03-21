@@ -1,6 +1,6 @@
 output = function() {
 
-  input.request.end(function(err, res) {
+  $.request.end(function(err, res) {
 
     if(err) {
 

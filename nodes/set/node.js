@@ -1,1 +1,1 @@
-output.request = input.request.set(input.name, input.value);
+output.request = $.request.set($.name, $.value);
