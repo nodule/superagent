@@ -27,9 +27,9 @@ module.exports = {
       }
     }
   },
-  fn: function set(input, output, state, done, cb, on) {
+  fn: function set(input, $, output, state, done, cb, on) {
     var r = function() {
-      output.request = input.request.set(input.name, input.value);
+      output.request = $.write('request', $.request.set($.name, $.value));
     }.call(this);
     return {
       output: output,

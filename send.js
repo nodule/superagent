@@ -19,7 +19,7 @@ module.exports = {
         fn: function __IN__(data, x, source, state, input, output) {
           var r = function() {
             output({
-              request: input.request.send(data)
+              request: $.write('request', $.request.send($.in))
             });
           }.call(this);
           return {

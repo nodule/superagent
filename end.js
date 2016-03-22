@@ -35,22 +35,19 @@ module.exports = {
       }
     }
   },
-  fn: function end(input, output, state, done, cb, on) {
+  fn: function end(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.request.end(function(err, res) {
-
+      $.request.end(function(err, res) {
         if (err) {
-
           output({
-            error: err
+            error: $.create(err)
           });
-
         } else {
           output({
-            res: res,
-            body: res.body,
-            headers: res.headers,
-            status: res.status
+            res: $.create(res),
+            body: $.create(res.body),
+            headers: $.create(res.headers),
+            status: $.create(res.status)
           });
         }
 
@@ -58,7 +55,6 @@ module.exports = {
         // server side superagent fails sometimes.
         // the weird thing is, first time it succeeds second time it fails.
         done();
-
       });
     }.call(this);
     return {

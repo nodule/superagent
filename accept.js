@@ -19,7 +19,7 @@ module.exports = {
         fn: function __TYPE__(data, x, source, state, input, output) {
           var r = function() {
             output({
-              request: input.request.accept(data)
+              request: $.create($.request.accept($.type))
             });
           }.call(this);
           return {

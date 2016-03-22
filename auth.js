@@ -28,9 +28,9 @@ module.exports = {
       }
     }
   },
-  fn: function auth(input, output, state, done, cb, on) {
+  fn: function auth(input, $, output, state, done, cb, on) {
     var r = function() {
-      output.request = input.request.auth(input.user, input.pass);
+      output.request = $.write('request', $.request.auth($.user, $.pass));
     }.call(this);
     return {
       output: output,

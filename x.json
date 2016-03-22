@@ -37,7 +37,7 @@
       "async": true,
       "ns": "superagent",
       "name": "accept",
-      "fn": "on.input.type = function() {\n  output( { request: input.request.accept(data) });\n};\n"
+      "fn": "on.input.type = function() {\n  output( { request: $.create($.request.accept($.type)) });\n};\n"
     },
     {
       "dependencies": {
@@ -84,7 +84,7 @@
       "description": "Super Agent is light-weight progressive ajax API",
       "ns": "superagent",
       "name": "api",
-      "fn": "output.request = superagent(input.method, input.url);\nif(input.withCredentials) {\n  output.request.withCredentials();\n}\n"
+      "fn": "output.request = $.create(superagent($.method, $.url));\nif($.withCredentials) {\n  output.request.withCredentials();\n}\n"
     },
     {
       "ports": {
@@ -116,7 +116,7 @@
       "description": "Set Authorization field value with `user` and `pass`",
       "ns": "superagent",
       "name": "auth",
-      "fn": "output.request = input.request.auth(input.user, input.pass);\n"
+      "fn": "output.request = $.write('request', $.request.auth($.user, $.pass));\n"
     },
     {
       "ports": {
@@ -155,7 +155,7 @@
       "description": "End request",
       "ns": "superagent",
       "name": "end",
-      "fn": "output = function() {\n\n  input.request.end(function(err, res) {\n\n    if(err) {\n\n      cb({ error: err });\n\n    } else {\n      cb({\n        res: res,\n        body: res.body,\n        headers: res.headers,\n        status: res.status\n      });\n    }\n\n    // server side and nextTick, could be done is too vroeg\n    // server side superagent fails sometimes.\n    // the weird thing is, first time it succeeds second time it fails.\n    done();\n\n  });\n\n};\n"
+      "fn": "output = function() {\n  $.request.end(function(err, res) {\n    if(err) {\n      cb({ error: $.create(err) });\n    } else {\n      cb({\n        res: $.create(res),\n        body: $.create(res.body),\n        headers: $.create(res.headers),\n        status: $.create(res.status)\n      });\n    }\n\n    // server side and nextTick, could be done is too vroeg\n    // server side superagent fails sometimes.\n    // the weird thing is, first time it succeeds second time it fails.\n    done();\n  });\n};\n"
     },
     {
       "ports": {
@@ -184,7 +184,7 @@
       "async": true,
       "ns": "superagent",
       "name": "query",
-      "fn": "on.input.query = function() {\n  output({ request: input.request.query(data) } );\n};\n"
+      "fn": "on.input.query = function() {\n  output({ request: $.write('request', $.request.query($.query)) } );\n};\n"
     },
     {
       "ports": {
@@ -213,7 +213,7 @@
       "async": true,
       "ns": "superagent",
       "name": "send",
-      "fn": "on.input.in = function() {\n  output( { request: input.request.send(data) });\n};\n"
+      "fn": "on.input.in = function() {\n  output( { request: $.write('request', $.request.send($.in)) });\n};\n"
     },
     {
       "ports": {
@@ -244,7 +244,7 @@
       "description": "Set Header",
       "ns": "superagent",
       "name": "set",
-      "fn": "output.request = input.request.set(input.name, input.value);\n"
+      "fn": "output.request = $.write('request', $.request.set($.name, $.value));\n"
     },
     {
       "ports": {
@@ -273,7 +273,7 @@
       "async": true,
       "ns": "superagent",
       "name": "type",
-      "fn": "on.input.type = function() {\n  output( { request: input.request.type(data) });\n};\n"
+      "fn": "on.input.type = function() {\n  output( { request: $.write('request', $.request.type($.type)) });\n};\n"
     }
   ],
   "twigs": []

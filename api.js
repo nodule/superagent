@@ -42,10 +42,10 @@ module.exports = {
       superagent: require('superagent')
     }
   },
-  fn: function api(input, output, state, done, cb, on, superagent) {
+  fn: function api(input, $, output, state, done, cb, on, superagent) {
     var r = function() {
-      output.request = superagent(input.method, input.url);
-      if (input.withCredentials) {
+      output.request = $.create(superagent($.method, $.url));
+      if ($.withCredentials) {
         output.request.withCredentials();
       }
     }.call(this);
