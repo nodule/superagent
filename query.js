@@ -16,7 +16,7 @@ module.exports = {
         title: "Query",
         type: "object",
         async: true,
-        fn: function __QUERY__(data, x, source, state, input, output) {
+        fn: function __QUERY__(data, source, state, input, $, output) {
           var r = function() {
             output({
               request: $.write('request', $.request.query($.query))

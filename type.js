@@ -16,7 +16,7 @@ module.exports = {
         title: "Type",
         type: "string",
         async: true,
-        fn: function __TYPE__(data, x, source, state, input, output) {
+        fn: function __TYPE__(data, source, state, input, $, output) {
           var r = function() {
             output({
               request: $.write('request', $.request.type($.type))
