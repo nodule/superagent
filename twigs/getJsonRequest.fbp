@@ -1,0 +1,14 @@
+title: Get JSON Request
+description: Retrieve json data from remote url
+
+API(superagent/api)
+End(superagent/end)
+
+-> url API
+'GET' -> @method API
+
+API request -> request End
+
+<-  headers End
+<-      res End
+<- body:out End

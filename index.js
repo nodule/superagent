@@ -6,5 +6,7 @@ module.exports = {
   query: require('./query'),
   send: require('./send'),
   set: require('./set'),
-  type: require('./type')
+  type: require('./type'),
+  getJsonRequest: require('./getJsonRequest'),
+  getTextRequest: require('./getTextRequest')
 }
