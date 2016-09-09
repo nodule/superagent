@@ -11,6 +11,13 @@
   },
   "nodes": [
     {
+      "name": "accept",
+      "ns": "superagent",
+      "async": true,
+      "description": "Accept types",
+      "phrases": {
+        "active": "Accepting type `{{input.type}}`"
+      },
       "ports": {
         "input": {
           "request": {
@@ -30,20 +37,14 @@
           }
         }
       },
-      "phrases": {
-        "active": "Accepting type `{{input.type}}`"
-      },
-      "description": "Accept types",
-      "async": true,
-      "ns": "superagent",
-      "name": "accept",
       "fn": "on.input.type = function() {\n  output( { request: $.create($.request.accept($.type)) });\n};\n"
     },
     {
-      "dependencies": {
-        "npm": {
-          "superagent": "^0.18.0"
-        }
+      "name": "api",
+      "ns": "superagent",
+      "description": "Super Agent is light-weight progressive ajax API",
+      "phrases": {
+        "active": "Creating superagent {{input.method}}: {{input.url}}"
       },
       "ports": {
         "input": {
@@ -78,15 +79,20 @@
           }
         }
       },
-      "phrases": {
-        "active": "Creating superagent {{input.method}}: {{input.url}}"
+      "dependencies": {
+        "npm": {
+          "superagent": "^0.18.0"
+        }
       },
-      "description": "Super Agent is light-weight progressive ajax API",
-      "ns": "superagent",
-      "name": "api",
       "fn": "output.request = $.create(superagent($.method, $.url));\nif($.withCredentials) {\n  output.request.withCredentials();\n}\n"
     },
     {
+      "name": "auth",
+      "ns": "superagent",
+      "description": "Set Authorization field value with `user` and `pass`",
+      "phrases": {
+        "active": "Setting Authorization field"
+      },
       "ports": {
         "input": {
           "request": {
@@ -110,15 +116,15 @@
           }
         }
       },
-      "phrases": {
-        "active": "Setting Authorization field"
-      },
-      "description": "Set Authorization field value with `user` and `pass`",
-      "ns": "superagent",
-      "name": "auth",
       "fn": "output.request = $.write('request', $.request.auth($.user, $.pass));\n"
     },
     {
+      "name": "end",
+      "ns": "superagent",
+      "description": "End request",
+      "phrases": {
+        "active": "Starting request"
+      },
       "ports": {
         "input": {
           "request": {
@@ -149,15 +155,16 @@
           }
         }
       },
-      "phrases": {
-        "active": "Starting request"
-      },
-      "description": "End request",
-      "ns": "superagent",
-      "name": "end",
       "fn": "output = function() {\n  $.request.end(function(err, res) {\n    if(err) {\n      cb({ error: $.create(err) });\n    } else {\n      cb({\n        res: $.create(res),\n        body: $.create(res.body),\n        headers: $.create(res.headers),\n        status: $.create(res.status)\n      });\n    }\n\n    // server side and nextTick, could be done is too vroeg\n    // server side superagent fails sometimes.\n    // the weird thing is, first time it succeeds second time it fails.\n    done();\n  });\n};\n"
     },
     {
+      "name": "query",
+      "ns": "superagent",
+      "async": true,
+      "description": "The .query() method accepts objects, which when used with the GET method will form a query-string. The following will produce the path /search?query=Manny&range=1..5&order=desc.",
+      "phrases": {
+        "active": "Adding query string"
+      },
       "ports": {
         "input": {
           "request": {
@@ -177,16 +184,16 @@
           }
         }
       },
-      "phrases": {
-        "active": "Adding query string"
-      },
-      "description": "The .query() method accepts objects, which when used with the GET method will form a query-string. The following will produce the path /search?query=Manny&range=1..5&order=desc.",
-      "async": true,
-      "ns": "superagent",
-      "name": "query",
       "fn": "on.input.query = function() {\n  output({ request: $.write('request', $.request.query($.query)) } );\n};\n"
     },
     {
+      "name": "send",
+      "ns": "superagent",
+      "async": true,
+      "description": "Send",
+      "phrases": {
+        "active": "Sending"
+      },
       "ports": {
         "input": {
           "request": {
@@ -206,16 +213,15 @@
           }
         }
       },
-      "phrases": {
-        "active": "Sending"
-      },
-      "description": "Send",
-      "async": true,
-      "ns": "superagent",
-      "name": "send",
       "fn": "on.input.in = function() {\n  output( { request: $.write('request', $.request.send($.in)) });\n};\n"
     },
     {
+      "name": "set",
+      "ns": "superagent",
+      "description": "Set Header",
+      "phrases": {
+        "active": "Setting header field `{{input.name}}`"
+      },
       "ports": {
         "input": {
           "request": {
@@ -238,15 +244,16 @@
           }
         }
       },
-      "phrases": {
-        "active": "Setting header field `{{input.name}}`"
-      },
-      "description": "Set Header",
-      "ns": "superagent",
-      "name": "set",
       "fn": "output.request = $.write('request', $.request.set($.name, $.value));\n"
     },
     {
+      "name": "type",
+      "ns": "superagent",
+      "async": true,
+      "description": "Content type",
+      "phrases": {
+        "active": "Content type `{{input.type}}`"
+      },
       "ports": {
         "input": {
           "request": {
@@ -266,13 +273,6 @@
           }
         }
       },
-      "phrases": {
-        "active": "Content type `{{input.type}}`"
-      },
-      "description": "Content type",
-      "async": true,
-      "ns": "superagent",
-      "name": "type",
       "fn": "on.input.type = function() {\n  output( { request: $.write('request', $.request.type($.type)) });\n};\n"
     },
     {
