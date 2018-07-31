@@ -9,7 +9,7 @@ module.exports = {
     input: {
       request: {
         title: "Request",
-        type: "Request"
+        type: "function"
       }
     },
     output: {
@@ -35,6 +35,7 @@ module.exports = {
       }
     }
   },
+  on: {},
   fn: function end(input, $, output, state, done, cb, on) {
     var r = function() {
       $.request.end(function(err, res) {

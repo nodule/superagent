@@ -10,7 +10,7 @@ module.exports = {
     input: {
       request: {
         title: "Request",
-        type: "Request"
+        type: "function"
       },
       type: {
         title: "Type",
@@ -36,5 +36,6 @@ module.exports = {
       }
     }
   },
-  state: {}
+  state: {},
+  on: {}
 }

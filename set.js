@@ -9,7 +9,7 @@ module.exports = {
     input: {
       request: {
         title: "Request",
-        type: "Request"
+        type: "function"
       },
       name: {
         title: "Name",

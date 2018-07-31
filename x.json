@@ -22,7 +22,7 @@
         "input": {
           "request": {
             "title": "Request",
-            "type": "Request"
+            "type": "function"
           },
           "type": {
             "title": "Type",
@@ -97,7 +97,7 @@
         "input": {
           "request": {
             "title": "Request",
-            "type": "Request"
+            "type": "function"
           },
           "user": {
             "title": "User",
@@ -129,7 +129,7 @@
         "input": {
           "request": {
             "title": "Request",
-            "type": "Request"
+            "type": "function"
           }
         },
         "output": {
@@ -169,7 +169,7 @@
         "input": {
           "request": {
             "title": "Request",
-            "type": "Request"
+            "type": "function"
           },
           "query": {
             "title": "Query",
@@ -198,7 +198,7 @@
         "input": {
           "request": {
             "title": "Request",
-            "type": "Request"
+            "type": "function"
           },
           "in": {
             "title": "Data",
@@ -226,7 +226,7 @@
         "input": {
           "request": {
             "title": "Request",
-            "type": "Request"
+            "type": "function"
           },
           "name": {
             "title": "Name",
@@ -258,7 +258,7 @@
         "input": {
           "request": {
             "title": "Request",
-            "type": "Request"
+            "type": "function"
           },
           "type": {
             "title": "Type",
@@ -339,7 +339,7 @@
       },
       "providers": {
         "@": {
-          "url": "https://serve-chix.rhcloud.com/nodes/{ns}/{name}"
+          "url": "https://api.chix.io/v1/nodes/rhalff/{ns}/{name}"
         }
       },
       "ns": "superagent",
@@ -409,7 +409,7 @@
       },
       "providers": {
         "@": {
-          "url": "https://serve-chix.rhcloud.com/nodes/{ns}/{name}"
+          "url": "https://api.chix.io/v1/nodes/rhalff/{ns}/{name}"
         }
       },
       "ns": "superagent",
